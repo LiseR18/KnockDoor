@@ -1,2 +1,2 @@
-# KnockDoor
-Répertoire de base du projet KnockDoor
+# Knocki
+Répertoire de base du projet Knocki
