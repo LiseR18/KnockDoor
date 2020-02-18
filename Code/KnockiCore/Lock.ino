@@ -3,12 +3,22 @@
  * interagir avec le verrou de la porte. 
  */
 
-void setup() {
-  // put your setup code here, to run once:
+Servo servo;
 
+void lockSetup() {
+  Serial.println("Lock successfully initialized");
 }
 
-void loop() {
-  // put your main code here, to run repeatedly:
+void openLock() {
+  servo.attach(SERVO);
+  servo.write(130);
+  delay(500);
+  servo.detach();
+}
 
+void closeLock() {
+  servo.attach(SERVO);
+  servo.write(80);
+  delay(500);
+  servo.detach();
 }
