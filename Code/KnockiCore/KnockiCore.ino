@@ -17,7 +17,9 @@ const int KNOCK_TOLERANCE = 100;
 boolean recording = false;
 
 //tableau dynamique qui se rempli dès que l'on écoute une combinaison
-int dynamicPattern[MAX_KNOCK] = {}; 
+int dynamicPattern[MAX_KNOCK] = {};
+
+int closePattern[1] = {300};
 
 //tableau contenant la combinaison secrète, 
 //ne change pas sauf si l'utilisateur la met à jour

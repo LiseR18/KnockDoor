@@ -28,8 +28,6 @@ void listenToPattern() {
         
       } else { //si on tape trop de coups
         blinkLed(RED, 200, 3);
-        Serial.print("knocktoun");
-        Serial.println(knockCount);
       }
       delay(1);
     }
@@ -49,7 +47,13 @@ void listenToPattern() {
       if (patternsValid()) { //si la combinaison est juste
         openLock();
       } else {
-        blinkLed(RED, 200, 6);
+        if (dynamicPattern[1] == 0 && dynamicPattern[0] != 0) {
+          if (requestClose()) {
+            closeLock();
+          } 
+        } else {
+          blinkLed(RED, 200, 6);
+        }
       }
     }
   }
@@ -119,6 +123,18 @@ boolean patternsValid() {
     int dyn = dynamicPattern[i];
     int saved = savedPattern[i];
     if (!((dyn >= saved - KNOCK_TOLERANCE) && (dyn <= saved + KNOCK_TOLERANCE))) {
+      return false;
+      Serial.println("Faux");
+    }
+  }
+  return true;
+}
+
+boolean requestClose() {
+  for (int i = 0; i < 1; i++) {
+    int dyn = dynamicPattern[i];
+    int closed = closePattern[i];
+    if (!((dyn >= closed - KNOCK_TOLERANCE) && (dyn <= closed + KNOCK_TOLERANCE))) {
       return false;
     }
   }
