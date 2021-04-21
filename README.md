@@ -1,5 +1,6 @@
 # Knocki
-Système permetant de déverrouiller une porte en "toquant" une combinaison secrète. **[Vidéo de démo](https://www.youtube.com/watch?v=I42KXvuVLV4)**
+Knocki is a proof of concept that allows you to open a door by "knocking" a secret combination that you configured beforehand. 
+**[Demo video](https://www.youtube.com/watch?v=I42KXvuVLV4)**
 
-*Projet Arduino réalisé en Peip2 à Polytech Nice-Sophia*
+*Realised in the context of the Arduino project at Polytech Nice-Sophia*
 
